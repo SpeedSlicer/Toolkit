@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bebas+Neue&display=swap');
+
+body {
+    background-color: rgb(18, 4, 17);
+    font-family: "Bebas Neue", serif;
+    color:white;
+    caret-color: transparent;
+    padding-left: 15vw;
+}
+ul {
+  position:fixed;
+  left:0;
+  top:0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 100svh;
+  background-color: #151414;
+}
+li a {
+    font-size: x-large;
+    display: block;
+    padding: 7vh 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+
+}
+li a:hover {
+  background-color: #555555;
+  color: white;
+}
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+.bbh-sans-bartle-regular {
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.logo {
+  width: 100%; 
+  height: auto;
+}
+.widget {
+    display: block;
+    background-color: rgb(24, 4, 42);
+    height: 30vh;
+    width: 35vw;
+    border-radius: 20px;
+}
+.widget:hover {
+    border-color: white;
+    border-width: 20px;
+    background-color: (56, 17, 93);
+}
+.centered {
+  text-align: center;
+}
