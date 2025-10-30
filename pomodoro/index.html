@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="pomo.css">
-
+    <script src="timer.js" defer></script>
 </head>
+
 <body>
     <div class="MainBody">
-        <br>
-        <h1>Pomodoro Timer</h1>
-        <br>
-        <br>
-        <label for="minutes">Minutes per Cycle:</label>
-        <input type="number" id="minutes" name="Minutes" min="0" max="60" />
-        <br>
-        <br>
-        <label for="break">Minutes per Break:</label>
-        <input type="number" id="minutes" name="Minutes" min="0" max="20" />
-        <br>
-        <br>
+        <div class="Overlay">
+            <br>
+            <h1>Pomodoro Timer</h1>
+            <br>
+            <br>
+            <label for="minutes">Minutes per Cycle: </label>
+            <input class="num_input" type="number" id="minutes_cycle" name="Minutes" min="0" max="60" placeholder="50" />
+            <br>
+            <br>
+            <label for="break">Minutes per Break: </label>
+            <input class="num_input" type="number" id="minutes_break" name="Minutes" min="0" max="20" placeholder="10" />
+            <br>
+            <br>
 
-        <label for="music">Music? </label>
-        <input type="checkbox" id="music">
-        
-        <br>
-        <br>
-        <button class="start_button">Start</button>
+            <label for="music">Music? </label>
+            <input class="music_checkbox" type="checkbox" id="music" checked>
 
+            <br>
+            <br>
+            <button onclick="beginTimer()" class="start_button">Start</button>
+
+        </div>
+        <div class="Timerlay inactive">
+            <h1>Time Left:</h1>
+            <h1 id="timerClock" class="Timer">00:00:00</h1>
+            <p class="study_checker">- Plan out your Study! Get a Snack/Drink! Tidy Your Desk!</p>
+            <div class="MainBody2">
+
+            </div>
+        </div>
     </div>
-
 </body>
+
 </html>
