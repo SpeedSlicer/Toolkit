@@ -1,0 +1,58 @@
+body {
+}
+.notif-box {
+  display: block;
+  align-self: center;
+  background-color: rgb(255, 255, 255);
+  height: 15vh;
+  width: 50vw;
+  border-radius: 20px;
+  text-align: center;
+  border: solid 0.3em;
+  border-color: rgb(0, 0, 0);
+  transition: all 0.8s ease;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.mouse-menu {
+  display: block;
+  align-self: center;
+  background-color: rgb(255, 255, 255);
+  height: 20vh;
+  width: 7vw;
+  border-radius: 5px;
+  text-align: center;
+  border: solid 0.3em;
+  border-color: rgb(0, 0, 0);
+  transition: all 0.8s ease;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.mouse-menu.inactive {
+  display: none;
+}
+.note {
+  position: absolute;
+  resize: none;
+  overflow: auto;
+  cursor: move;
+  width: 200px;
+  height: 100px;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.note.frozen {
+  position: absolute;
+  resize: none;
+  overflow: auto;
+  cursor: move;
+  width: 200px;
+  height: 100px;
+  user-select: none;
+  box-sizing: border-box;
+}
