@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="pomo.css">
+    <link rel="stylesheet" href="pomo.css" />
     <script src="timer.js" defer></script>
-</head>
+  </head>
 
-<body>
-    <div class="MainBody">
-        <div class="Overlay">
-            <br>
-            <h1>Pomodoro Timer</h1>
-            <br>
-            <br>
-            <label for="minutes">Minutes per Cycle: </label>
-            <input class="num_input" type="number" id="minutes_cycle" name="Minutes" min="0" max="60" placeholder="50" />
-            <br>
-            <br>
-            <label for="break">Minutes per Break: </label>
-            <input class="num_input" type="number" id="minutes_break" name="Minutes" min="0" max="20" placeholder="10" />
-            <br>
-            <br>
-
-            <label for="music">Music? </label>
-            <input class="music_checkbox" type="checkbox" id="music" checked>
-
-            <br>
-            <br>
-            <button onclick="beginTimer()" class="start_button">Start</button>
-
-        </div>
-        <div class="Timerlay inactive">
-            <h1>Time Left:</h1>
-            <h1 id="timerClock" class="Timer">00:00:00</h1>
-            <p class="study_checker">- Plan out your Study! Get a Snack/Drink! Tidy Your Desk!</p>
-            <div class="MainBody2">
-
-            </div>
-        </div>
+  <body>
+    <div class="image_div">
+      <img id="joe" class="anim_image" src="resources/Uno.png" />
     </div>
-</body>
 
+    <div class="MainBody">
+      <div class="Overlay">
+        <br />
+        <h1>Pomodoro Timer</h1>
+        <br />
+        <br />
+        <label for="minutes">Minutes per Cycle: </label>
+        <input
+          class="num_input"
+          type="number"
+          id="minutes_cycle"
+          name="Minutes"
+          min="0"
+          max="60"
+          placeholder="50"
+        />
+        <br />
+        <br />
+        <label for="break">Minutes per Break: </label>
+        <input
+          class="num_input"
+          type="number"
+          id="minutes_break"
+          name="Minutes"
+          min="0"
+          max="20"
+          placeholder="10"
+        />
+        <br />
+        <br />
+
+        <label for="music">Music? </label>
+        <input class="music_checkbox" type="checkbox" id="music" checked />
+
+        <br />
+        <br />
+        <button onclick="beginTimer()" class="start_button">Start</button>
+      </div>
+      <div class="Timerlay inactive">
+        <h1>Time Left:</h1>
+        <h1 id="timerClock" class="Timer">00:00:00</h1>
+        <p id="text_blurb" class="study_checker">
+          - Plan out your Study! Get a Snack/Drink! Tidy Your Desk!
+        </p>
+      </div>
+    </div>
+    <audio id="musicSystem" loop>
+      <source id="soundSystem" src="tracks/1.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
 </html>
