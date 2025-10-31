@@ -1,2 +1,4 @@
 # Toolkit
-Basically a homepage for me, for all school stuff I need
+Stuff I use for school
+[https://toolkit.speedslicer.dev/
+](https://toolkit.speedslicer.dev/)
