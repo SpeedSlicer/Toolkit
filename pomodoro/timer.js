@@ -72,9 +72,16 @@ function updateTimer() {
         "- Plan out your Study! Get a Snack/Drink! Tidy Your Desk!";
     }
   }
+  document.title =
+    hours +
+    ":" +
+    String(minutes).padStart(2, "0") +
+    ":" +
+    String(seconds).padStart(2, "0");
 
   flipImage();
 }
+
 function flipImage() {
   const img = document.getElementById("joe");
   if (studying == true) {
