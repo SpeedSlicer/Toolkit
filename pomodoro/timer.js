@@ -4,6 +4,8 @@ const minute_box_break = document.getElementById("minutes_break");
 const text_blurb = document.getElementById("text_blurb");
 const music_system = document.getElementById("musicSystem");
 const sound_system = document.getElementById("soundSystem");
+const music_toggle = document.getElementById("music_checkbox");
+
 minute_box.value = 50;
 minute_box_break.value = 10;
 let flip = false;
@@ -24,7 +26,9 @@ const audios = [
 function beginTimer() {
   const randomIndex = Math.floor(Math.random() * audios.length);
   sound_system.src = audios[randomIndex];
-  music_system.play();
+  if (music_toggle.checked) {
+    music_system.play();
+  }
 
   document.querySelector(".MainBody").classList.toggle("active");
   document.querySelector(".image_div").classList.toggle("active");
@@ -40,7 +44,9 @@ function updateTimer() {
   if (sound_system.finished) {
     const randomIndex = Math.floor(Math.random() * audios.length);
     sound_system.src = audios[randomIndex];
-    music_system.play();
+    if (music_toggle.checked) {
+      music_system.play();
+    }
   }
   const hours = Math.floor(secondsLeft / 3600);
   const minutes = Math.floor((secondsLeft % 3600) / 60);

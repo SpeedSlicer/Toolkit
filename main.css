@@ -18,7 +18,7 @@ body {
   align-self: center;
   background-color: rgb(255, 255, 255);
   height: 50vh;
-  width: 40vw;
+  width: 50vw;
   margin: 0 auto;
   border-radius: 20px;
   text-align: center;
@@ -49,4 +49,10 @@ button:hover {
 button:active {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em;
+}
+
+.logo_img {
+  width: 15vw;
+  height: auto;
+  transition: transform 0.8s ease;
 }
