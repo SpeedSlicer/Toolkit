@@ -26,8 +26,10 @@ const audios = [
 function beginTimer() {
   const randomIndex = Math.floor(Math.random() * audios.length);
   sound_system.src = audios[randomIndex];
-  if (music_toggle.checked) {
-    music_system.play();
+  music_system.src = audios[randomIndex];
+  music_system.load();
+  if (music_toggle && music_toggle.checked) {
+    music_system.play().catch((e) => console.warn('audio play prevented:', e));
   }
 
   document.querySelector(".MainBody").classList.toggle("active");
@@ -41,11 +43,12 @@ function beginTimer() {
 }
 
 function updateTimer() {
-  if (sound_system.finished) {
+  if (music_system.ended) {
     const randomIndex = Math.floor(Math.random() * audios.length);
-    sound_system.src = audios[randomIndex];
-    if (music_toggle.checked) {
-      music_system.play();
+    music_system.src = audios[randomIndex];
+    music_system.load();
+    if (music_toggle && music_toggle.checked) {
+      music_system.play().catch((e) => console.warn('audio play prevented:', e));
     }
   }
   const hours = Math.floor(secondsLeft / 3600);
@@ -63,6 +66,7 @@ function updateTimer() {
     secondsLeft--;
   } else {
     studying = !studying;
+    document.getElementById("alarmSystem").play().catch((e) => console.warn('audio play prevented:', e));
     if (studying) {
       secondsLeft = minute_box.value * 60;
       text_blurb.textContent = "- Keep Persisting!";
@@ -95,10 +99,11 @@ function flipImage() {
 document.addEventListener('DOMContentLoaded', function() {
     const audio = document.getElementById('musicSystem');
     const volumeSlider = document.getElementById('volumeSlider');
-
-    audio.volume = volumeSlider.value;
+  if (audio && volumeSlider) {
+    audio.volume = parseFloat(volumeSlider.value) || 1;
 
     volumeSlider.addEventListener('input', function() {
-        audio.volume = this.value;
+      audio.volume = parseFloat(this.value) || 1;
     });
+  }
 });
