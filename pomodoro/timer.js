@@ -92,3 +92,13 @@ function flipImage() {
 
   flip = !flip;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('musicSystem');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    audio.volume = volumeSlider.value;
+
+    volumeSlider.addEventListener('input', function() {
+        audio.volume = this.value;
+    });
+});
