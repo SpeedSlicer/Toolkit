@@ -36,7 +36,7 @@ function beginTimer() {
   document.querySelector(".image_div").classList.toggle("active");
   document.querySelector(".Overlay").classList.toggle("inactive");
   document.querySelector(".Timerlay").classList.toggle("inactive");
-  secondsLeft = minute_box_break.value * 60;
+  secondsLeft = minute_box.value * 60;
 
   updateTimer();
   setInterval(updateTimer, 1000);
