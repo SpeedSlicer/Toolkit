@@ -43,8 +43,9 @@ function beginTimer() {
 }
 
 function updateTimer() {
-  if (music_system.ended) {
+  if (music_system.ended || sound_system.ended) {
     const randomIndex = Math.floor(Math.random() * audios.length);
+    sound_system.src = audios[randomIndex];
     music_system.src = audios[randomIndex];
     music_system.load();
     if (music_toggle && music_toggle.checked) {
@@ -96,13 +97,13 @@ function flipImage() {
 
   flip = !flip;
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const audio = document.getElementById('musicSystem');
-    const volumeSlider = document.getElementById('volumeSlider');
+document.addEventListener('DOMContentLoaded', function () {
+  const audio = document.getElementById('musicSystem');
+  const volumeSlider = document.getElementById('volumeSlider');
   if (audio && volumeSlider) {
     audio.volume = parseFloat(volumeSlider.value) || 1;
 
-    volumeSlider.addEventListener('input', function() {
+    volumeSlider.addEventListener('input', function () {
       audio.volume = parseFloat(this.value) || 1;
     });
   }
