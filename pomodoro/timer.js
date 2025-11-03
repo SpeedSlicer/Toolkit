@@ -9,7 +9,7 @@ const music_toggle = document.getElementById("music_checkbox");
 minute_box.value = 50;
 minute_box_break.value = 10;
 let flip = false;
-let studying = false;
+let studying = true;
 const audios = [
   "tracks/1.mp3",
   "tracks/2.mp3",
